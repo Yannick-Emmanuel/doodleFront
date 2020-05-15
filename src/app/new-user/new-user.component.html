@@ -1,0 +1,57 @@
+<div class="inscription-container center">
+    <p class="titre">
+        Inscription
+    </p>
+
+    <!-- nom -->
+    <div>
+        <mat-form-field class="input_inscription" appearance="fill">
+            <mat-label>Entrez votre nom</mat-label>
+            <input [(ngModel)]="utilisateur.nom" matInput placeholder="Ex. Dupon" required>
+        </mat-form-field>
+    </div>
+
+    <!-- prenom -->
+    <div>
+        <mat-form-field class="input_inscription" appearance="fill">
+            <mat-label>Entrez votre prenom</mat-label>
+            <input [(ngModel)]="utilisateur.prenom" matInput placeholder="Ex. Pierre" required>
+        </mat-form-field>
+    </div>
+
+    <!-- email -->
+    <div>
+        <mat-form-field class="input_inscription" appearance="fill">
+          <mat-label>Entrez votre email</mat-label>
+          <input [(ngModel)]="utilisateur.email" matInput placeholder="email@example.com" [formControl]="email" required>
+           <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> 
+        </mat-form-field>
+    </div>
+
+    <!-- password -->
+    <div class="password-container">
+        <mat-form-field class="input_inscription" appearance="fill">
+            <mat-label>Entrez votre mot de passe</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+    </div>
+
+    <!-- confirm password -->
+    <div class="password-container">
+        <mat-form-field class="input_inscription" appearance="fill">
+            <mat-label>Confirmez votre mot de passe</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+    </div>
+
+    <!-- button submit-->
+    <div>
+        <button (click)="createUser()" class="valider_button" mat-raised-button>Valider</button>
+    </div>
+</div>

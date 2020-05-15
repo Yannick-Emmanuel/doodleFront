@@ -1,0 +1,30 @@
+<div class="connexion-container center">
+    <p class="titre">
+        Connexion
+    </p>
+    <!-- email -->
+    <div>
+        <mat-form-field class="input_connection" appearance="fill">
+          <mat-label>Entrez votre email</mat-label>
+          <input matInput placeholder="email@example.com" [formControl]="email" required>
+           <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> 
+        </mat-form-field>
+    </div>
+
+    <!-- password -->
+    <div class="password-container">
+        <mat-form-field class="input_connection" appearance="fill">
+            <mat-label>Entrez votre mot de passe</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+    </div>
+
+    <!-- button submit-->
+    <div>
+        <button routerLink="/new-user" class="inscription_button" mat-raised-button>Inscrivez-vous</button>
+        <button class="connection_button" mat-raised-button color="primary">Connectez-vous</button>
+    </div>
+</div>

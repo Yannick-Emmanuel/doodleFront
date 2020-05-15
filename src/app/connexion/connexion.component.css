@@ -1,0 +1,31 @@
+.center {
+  margin-left: 40%;
+  margin-top: 20em;
+}
+
+.titre{
+  margin-left: 3.5em;
+  margin-bottom: 2em;
+  font-weight: bold;
+  font-size: x-large;
+}
+
+.connexion-container .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+}
+
+.input_connection{
+  width: 20.9em;
+}
+
+.connection_button{
+  margin-left: 8px;
+  color : white;
+  font-size: medium;
+}
+
+.inscription_button{
+  background-color : lightseagreen;
+  color : white;
+  font-size: medium;
+}

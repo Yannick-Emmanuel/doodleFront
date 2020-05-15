@@ -1,0 +1,54 @@
+<div class="sondage-container center">
+    <p class="titre">
+        Nouveau sondage
+    </p>
+
+    <!-- libelle -->
+    <div>
+        <mat-form-field class="input_new_sondage" appearance="fill">
+            <mat-label>Saisissez le titre</mat-label>
+            <input matInput placeholder="Sondage" required>
+        </mat-form-field>
+    </div>
+
+    <!-- description -->
+    <div>
+        <mat-form-field class="input_new_sondage" appearance="fill">
+            <mat-label>Ajoutez une description</mat-label>
+            <input matInput placeholder="le sondage porte sur...">
+        </mat-form-field>
+    </div>
+
+    <!-- Pause -->
+    <mat-slide-toggle class="slide" [(ngModel)] = "pause">Pause</mat-slide-toggle>
+
+    <!-- Alergies -->
+    <div>
+        <mat-form-field class="input_new_sondage" appearance="fill">
+            <mat-label>Saisissez vos allergies</mat-label>
+            <textarea matInput placeholder="Ex. Crevettes, Huître..." [disabled] = !pause></textarea>
+        </mat-form-field>
+    </div>
+
+    <!-- Date 
+    <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Choississez une date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field> -->
+    
+    <!-- Lieu -->
+    <div>
+        <mat-form-field class="input_new_sondage" appearance="fill">
+            <mat-label>Ajoutez un lieu</mat-label>
+            <input matInput placeholder="Skype" required>
+        </mat-form-field>
+    </div>
+
+    <!-- button submit-->
+    <div>
+        <button class="valider_button" mat-raised-button>Valider</button>
+    </div>
+
+
+</div>

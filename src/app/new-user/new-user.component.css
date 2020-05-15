@@ -1,0 +1,26 @@
+.center {
+    margin-left: 40%;
+    margin-top: 10em;
+}
+
+.titre{
+    margin-left: 3.5em;
+    margin-bottom: 2em;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.inscription-container{
+    margin-left: 40%;
+}
+
+.input_inscription{
+    width: 20.9em;
+}
+
+.valider_button{
+    width: 18.3em;
+    background-color : lightseagreen;
+    color : white;
+    font-size: medium;
+}
