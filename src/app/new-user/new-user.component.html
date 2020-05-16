@@ -7,7 +7,7 @@
     <div>
         <mat-form-field class="input_inscription" appearance="fill">
             <mat-label>Entrez votre nom</mat-label>
-            <input [(ngModel)]="utilisateur.nom" matInput placeholder="Ex. Dupon" required>
+            <input [(ngModel)]="utilisateur.nom_participant" matInput placeholder="Ex. Dupon" required>
         </mat-form-field>
     </div>
 
@@ -15,7 +15,7 @@
     <div>
         <mat-form-field class="input_inscription" appearance="fill">
             <mat-label>Entrez votre prenom</mat-label>
-            <input [(ngModel)]="utilisateur.prenom" matInput placeholder="Ex. Pierre" required>
+            <input [(ngModel)]="utilisateur.prenom_participant" matInput placeholder="Ex. Pierre" required>
         </mat-form-field>
     </div>
 
@@ -52,6 +52,6 @@
 
     <!-- button submit-->
     <div>
-        <button (click)="createUser()" class="valider_button" mat-raised-button>Valider</button>
+        <button routerLink="/new-sondage" (click)="createUser()" class="valider_button" mat-raised-button>Valider</button>
     </div>
 </div>

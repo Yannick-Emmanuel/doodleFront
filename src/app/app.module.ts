@@ -18,6 +18,8 @@ import { ListSondageComponent } from './list-sondage/list-sondage.component';
 import { ListParticipantComponent } from './list-participant/list-participant.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatListModule} from '@angular/material/list';
+import {DoodleService} from './doodle.service';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
   { path : '', component : ConnexionComponent },
@@ -51,8 +53,9 @@ const appRoutes: Routes = [
     MatDatepickerModule,
     MatExpansionModule,
     MatListModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [DoodleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -25,7 +25,7 @@ export class NewUserComponent implements OnInit {
   }
 
   createUser(){
-
+    this.service.createUser(this.utilisateur)
   }
 
 }

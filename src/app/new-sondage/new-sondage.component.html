@@ -7,7 +7,7 @@
     <div>
         <mat-form-field class="input_new_sondage" appearance="fill">
             <mat-label>Saisissez le titre</mat-label>
-            <input matInput placeholder="Sondage" required>
+            <input [(ngModel)]="sondage.libelle" matInput placeholder="Sondage" required>
         </mat-form-field>
     </div>
 
@@ -15,14 +15,14 @@
     <div>
         <mat-form-field class="input_new_sondage" appearance="fill">
             <mat-label>Ajoutez une description</mat-label>
-            <input matInput placeholder="le sondage porte sur...">
+            <input [(ngModel)]="sondage.description" matInput placeholder="le sondage porte sur...">
         </mat-form-field>
     </div>
 
     <!-- Pause -->
     <mat-slide-toggle class="slide" [(ngModel)] = "pause">Pause</mat-slide-toggle>
 
-    <!-- Alergies -->
+    <!-- Allergies -->
     <div>
         <mat-form-field class="input_new_sondage" appearance="fill">
             <mat-label>Saisissez vos allergies</mat-label>
@@ -47,7 +47,7 @@
 
     <!-- button submit-->
     <div>
-        <button class="valider_button" mat-raised-button>Valider</button>
+        <button (click)="createSondage()" class="valider_button" mat-raised-button>Valider</button>
     </div>
 
 

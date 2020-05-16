@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DoodleService } from '../doodle.service';
 
 @Component({
   selector: 'app-list-sondage',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListSondageComponent implements OnInit {
 
-  constructor() { }
+  id_user : number
+  constructor(private service: DoodleService) { }
 
   ngOnInit(): void {
+  }
+
+  getSondage() {
+    this.service.getSondage(this.id_user)
   }
 
 }

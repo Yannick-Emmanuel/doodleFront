@@ -3,16 +3,13 @@ import {JsonObject, JsonProperty} from 'json2typescript';
 @JsonObject('User')
 export class User {
     id: number;
-    @JsonProperty('email', String)
     email: string;
-    @JsonProperty('prenom_participant', String)
-    prenom: string;
-    @JsonProperty('nom_participant', String)
-    nom: string;
+    prenom_participant: string;
+    nom_participant: string;
     constructor() {
         this.email = '';
-        this.prenom = '';
-        this.nom = '';
+        this.prenom_participant = '';
+        this.nom_participant = '';
     }
 
     getId(): number {
@@ -22,9 +19,9 @@ export class User {
         return this.email;
     }
     getPrenom(): string {
-        return this.prenom;
+        return this.prenom_participant;
     }
     getNom(): string {
-        return this.nom;
+        return this.nom_participant;
     }
 }
