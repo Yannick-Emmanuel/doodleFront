@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
 import {User} from '../user';
 import {DoodleService} from '../doodle.service';
+import {ActivatedRoute,Router} from '@angular/router'
 
 @Component({
   selector: 'app-new-user',
@@ -9,10 +10,11 @@ import {DoodleService} from '../doodle.service';
   styleUrls: ['./new-user.component.css']
 })
 export class NewUserComponent implements OnInit {
-  utilisateur=new User()
+  utilisateur =new User()
   hide = true; //cache le mot de passe
   email = new FormControl('', [Validators.required, Validators.email]);
-  constructor(private service: DoodleService) { }
+  constructor(private service: DoodleService,private route:ActivatedRoute,private router:Router) {
+   }
 
   ngOnInit(): void {
   }
@@ -25,7 +27,11 @@ export class NewUserComponent implements OnInit {
   }
 
   createUser(){
-    this.service.createUser(this.utilisateur)
+    this.service.createUser(this.utilisateur).subscribe(result=> this.gotoConnexion())
+  }
+  
+  gotoConnexion(){
+    this.router.navigate(['/list-sondage'])
   }
 
 }

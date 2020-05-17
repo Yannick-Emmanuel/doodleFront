@@ -20,22 +20,22 @@ export class DoodleService {
         /** POST: add a new user to the database */
 
     createUser(user: User){
-        return this.http.post<User>('http://localhost:8080/users/', user, this.httpOptions)
+        return this.http.post<User>('http://localhost:8080/users/', user)
     }
 
     createSondage(sondage: Sondage, id_user : number, id_date : Date): Observable<Sondage> {
-        return this.http.post<Sondage>('http://localhost:8080/'+id_user+'/'+sondage.id+'/'+id_date, sondage, this.httpOptions)
+        return this.http.post<Sondage>('http://localhost:8080/'+id_user+'/'+sondage.id+'/'+id_date, sondage)
     }
 
     getSondage(id_user : number){
-        return this.http.get<Sondage[]>('http://localhost:8080/'+id_user+'/', this.httpOptions)
+        return this.http.get<Sondage[]>('http://localhost:8080/'+id_user+'/')
     }
 
     addLieu(id_user : number, id_sondage : number, id_lieu : number){
-        return this.http.post('http://localhost:8080/'+id_user+'/'+id_sondage+'/'+id_lieu, this.httpOptions)
+        return this.http.post('http://localhost:8080/'+id_user+'/'+id_sondage+'/'+id_lieu,null)
     }
 
     addDate(id_user : number, id_sondage : number, id_date : Date){
-        return this.http.post('http://localhost:8080/'+id_user+'/'+id_sondage+'/'+id_date, this.httpOptions)
+        return this.http.post('http://localhost:8080/'+id_user+'/'+id_sondage+'/'+id_date,null)
     }
 }
